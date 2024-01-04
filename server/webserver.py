@@ -17,7 +17,7 @@ GOOGLE_SCOPE = [
     "openid"
 ]
 
-DOMAIN_URL = "https://9979-122-171-21-142.ngrok-free.app"
+DOMAIN_URL = "https://b0be-46-212-186-13.ngrok-free.app"
 
 @app.route('/verify_token/<slug>', methods=['POST'])
 def verify_token(slug):

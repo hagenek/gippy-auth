@@ -18,7 +18,7 @@ function Dashboard() {
       alert("Enter Google Credentials!");
     } else {
       axios
-        .post("https://5bc9-46-212-186-13.ngrok-free.app/get_credentials", {
+        .post("/api/get_credentials", {
           googleId: googleCreds.id,
           googleSecret: googleCreds.secret,
         })
@@ -72,13 +72,10 @@ function Dashboard() {
       });
     }
   }, [credentials]);
-
   useEffect(() => {
     if (localStorage.getItem("authID") != null) {
       axios
-        .post("https://5bc9-46-212-186-13.ngrok-free.app/get_credentials", {
-          id: localStorage.getItem("authID"),
-        })
+        .post("/api/get_credentials", { id: localStorage.getItem("authID") })
         .then((res) => {
           setCredentials({
             adminId: res.data.adminId,

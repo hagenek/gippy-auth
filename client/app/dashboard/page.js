@@ -18,7 +18,7 @@ function Dashboard() {
       alert("Enter Google Credentials!");
     } else {
       axios
-        .post("https://5bc9-46-212-186-13.ngrok-free.app/api/get_credentials", {
+        .post("https://5bc9-46-212-186-13.ngrok-free.app/get_credentials", {
           googleId: googleCreds.id,
           googleSecret: googleCreds.secret,
         })
@@ -76,7 +76,7 @@ function Dashboard() {
   useEffect(() => {
     if (localStorage.getItem("authID") != null) {
       axios
-        .post("https://5bc9-46-212-186-13.ngrok-free.app/api/get_credentials", {
+        .post("https://5bc9-46-212-186-13.ngrok-free.app/get_credentials", {
           id: localStorage.getItem("authID"),
         })
         .then((res) => {
